@@ -7,9 +7,16 @@ The stack is launched as a single graph via `autonomy.launch.py`. A **mission st
 | Doc | What you get |
 |-----|----------------|
 | **This README** | Overview, quick start, topics, tests |
-| **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)** | **Internals** — FSM entry/exit, PID math, ArUco gating, mux timing, message schemas, debugging |
-| [docs/README.md](docs/README.md) | Documentation index |
+| **[docs/TEAM_GUIDE.md](docs/TEAM_GUIDE.md)** | **New teammates** — plain-language overview, mission story, FAQ |
+| **[docs/PRESENTATION.md](docs/PRESENTATION.md)** | Slide outline + demo script for team meetings |
+| [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md) | Clone, build, first `ros2` commands |
+| [docs/OPERATIONS.md](docs/OPERATIONS.md) | Field / test-day checklists |
+| [docs/GLOSSARY.md](docs/GLOSSARY.md) | Terms & topic dictionary |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | **Internals** — FSM, PID, gating, debugging |
+| [docs/README.md](docs/README.md) | Full documentation index |
 | [training/README.md](training/README.md) | YOLO dataset & training |
+
+> **Presenting to teammates?** Start with [docs/PRESENTATION.md](docs/PRESENTATION.md) and share [docs/TEAM_GUIDE.md](docs/TEAM_GUIDE.md).
 
 ---
 
@@ -219,7 +226,7 @@ python export.py --model ../models/urc_objects/weights/best.pt   # TensorRT on J
 
 ```text
 .
-├── docs/                 # Deep-dive docs (start at ARCHITECTURE.md)
+├── docs/                 # Team guides, presentation, operations, architecture
 ├── ros2_ws/src/          # ROS 2 packages
 ├── training/             # YOLO train / validate / export
 ├── datasets/             # Labeled images
