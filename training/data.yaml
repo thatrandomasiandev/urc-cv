@@ -1,0 +1,8 @@
+# YOLOv8 dataset config (paths relative to this file's directory)
+path: ../datasets/urc_objects
+train: images/train
+val: images/val
+test: images/test
+
+nc: 3
+names: ['mallet', 'rock_pick', 'water_bottle']

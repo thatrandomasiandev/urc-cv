@@ -1,0 +1,33 @@
+services:
+  autonomy:
+    build: .
+    network_mode: host
+    privileged: true
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    volumes:
+      - ./ros2_ws/src:/ros2_ws/src:ro
+    command: >
+      bash -c "source /opt/ros/humble/setup.bash &&
+               source /ros2_ws/install/setup.bash &&
+               ros2 launch urc_autonomy autonomy.launch.py"
+    environment:
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      - DISPLAY=${DISPLAY:-}
+    stdin_open: true
+    tty: true
+
+  dev:
+    build: .
+    network_mode: host
+    privileged: true
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    volumes:
+      - ./ros2_ws:/ros2_ws
+    command: bash
+    environment:
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      - DISPLAY=${DISPLAY:-}
+    stdin_open: true
+    tty: true

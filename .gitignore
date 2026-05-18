@@ -1,0 +1,41 @@
+# ROS 2
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+venv/
+.venv/
+
+# ML artifacts (large — train locally, deploy paths in launch files)
+datasets/
+models/
+*.pt
+*.engine
+*.onnx
+runs/
+
+# Logs & local data
+urc_logs/
+*.bag
+*.mcap
+
+# macOS / editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Env / secrets
+.env
+.env.*

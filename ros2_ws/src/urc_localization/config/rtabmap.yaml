@@ -1,0 +1,16 @@
+/**:
+  ros__parameters:
+    frame_id: base_link
+    odom_frame_id: odom
+    publish_tf: false
+    subscribe_depth: true
+    subscribe_rgb: true
+    approx_sync: true
+    queue_size: 10
+    Odom/Strategy: "0"
+    Odom/ResetCountdown: "0"
+    Vis/MinInliers: "15"
+    Vis/MaxDepth: "10.0"
+    RGBD/OptimizeMaxError: "0"
+    OdomF2M/MaxSize: "2000"
+    Mem/STMSize: "30"

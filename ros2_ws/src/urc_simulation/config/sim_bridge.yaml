@@ -1,0 +1,12 @@
+# Remaps simulation topics to names expected by the URC autonomy stack (RealSense equivalents).
+# Loaded by sim.launch.py to spawn topic_tools relay nodes.
+
+stack_relays:
+  - from: /imu/data
+    to: /camera/imu
+
+  - from: /camera/depth/image_raw
+    to: /camera/aligned_depth_to_color/image_raw
+
+  - from: /camera/depth/camera_info
+    to: /camera/aligned_depth_to_color/camera_info

@@ -1,0 +1,23 @@
+topics:
+  - name: nav2
+    topic: /cmd_vel_nav2
+    timeout: 1.0
+    priority: 10
+  - name: visual_servo
+    topic: /cmd_vel_servo
+    timeout: 0.5
+    priority: 20
+  - name: object_approach
+    topic: /cmd_vel_approach
+    timeout: 0.5
+    priority: 18
+  - name: search
+    topic: /cmd_vel_search
+    timeout: 0.5
+    priority: 15
+
+locks:
+  - name: e_stop
+    topic: /e_stop
+    timeout: 0.0
+    priority: 255

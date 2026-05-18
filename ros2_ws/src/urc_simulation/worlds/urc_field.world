@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="urc_field">
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+      <update_rate>50</update_rate>
+    </plugin>
+
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0.6 0</pose>
+      <diffuse>0.9 0.9 0.85 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>-0.3 0.2 -1</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>80 80</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>80 80</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.55 0.48 0.38 1</ambient>
+            <diffuse>0.62 0.54 0.42 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_north">
+      <static>true</static>
+      <pose>0 12.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>25 0.2 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>25 0.2 1</size></box></geometry>
+          <material><ambient>0.35 0.35 0.38 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_south">
+      <static>true</static>
+      <pose>0 -12.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>25 0.2 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>25 0.2 1</size></box></geometry>
+          <material><ambient>0.35 0.35 0.38 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_east">
+      <static>true</static>
+      <pose>12.5 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.2 25 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.2 25 1</size></box></geometry>
+          <material><ambient>0.35 0.35 0.38 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_west">
+      <static>true</static>
+      <pose>-12.5 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.2 25 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.2 25 1</size></box></geometry>
+          <material><ambient>0.35 0.35 0.38 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="rock_1">
+      <static>true</static>
+      <pose>4 3 0.35 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><sphere><radius>0.35</radius></sphere></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><sphere><radius>0.35</radius></sphere></geometry>
+          <material><ambient>0.45 0.42 0.4 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="rock_2">
+      <static>true</static>
+      <pose>-5 -4 0.28 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><sphere><radius>0.28</radius></sphere></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><sphere><radius>0.28</radius></sphere></geometry>
+          <material><ambient>0.42 0.4 0.38 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="berm">
+      <static>true</static>
+      <pose>-2 6 0.15 0 0 0.4</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>3 1.5 0.3</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>3 1.5 0.3</size></box></geometry>
+          <material><ambient>0.5 0.44 0.36 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="marker_post">
+      <static>true</static>
+      <pose>6 -2 0.4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.05 0.6 0.8</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.05 0.6 0.8</size></box></geometry>
+          <material><ambient>0.9 0.9 0.9 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
