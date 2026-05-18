@@ -88,7 +88,7 @@ ros2 launch urc_autonomy autonomy.launch.py use_sim_time:=true launch_realsense:
 Load waypoints (JSON list of `lat` / `lon`):
 
 ```bash
-./scripts/load_waypoints.sh waypoints.json
+./scripts/load_waypoints.sh waypoints/example_waypoints.json
 ```
 
 ## Key topics
@@ -147,11 +147,31 @@ Place weights at `models/urc_objects.pt` (or update `model_path` in `autonomy.la
 .
 ├── ros2_ws/src/          # ROS 2 packages
 ├── training/             # YOLO train / validate / export
+├── datasets/             # Labeled images (tracked — add your data here)
+├── models/               # Weights & TensorRT engines (tracked)
+├── waypoints/            # Mission waypoint JSON files
 ├── scripts/              # Helper shell scripts
+├── tools/                # Dev utilities (e.g. mac_stress.py)
+├── requirements.txt      # Python deps for training & dev
 ├── Dockerfile
 └── docker-compose.yml
 ```
 
+## What is tracked in git
+
+The repo includes **all source code, configs, tests, and directory scaffolding**. Only generated artifacts are ignored:
+
+- `ros2_ws/build/`, `install/`, `log/` (colcon output)
+- Python `__pycache__` / virtualenvs
+- Large **recorded** bags under `urc_logs/` (`*.bag`, `*.mcap`)
+- `.env` secrets
+
+**Datasets**, **model weights** (`.pt`, `.engine`), and **training runs** are **not** gitignored — add them and commit when ready. Use Git LFS if individual files exceed ~100 MB.
+
+```bash
+pip install -r requirements.txt
+```
+
 ## License
 
-MIT — see package manifests in each ROS package.
+MIT — see [LICENSE](LICENSE).

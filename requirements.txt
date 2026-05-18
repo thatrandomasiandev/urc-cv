@@ -1,0 +1,11 @@
+# Training & export (see training/README.md)
+ultralytics>=8.0.0
+torch>=2.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# Dev / stress test utility
+psutil>=5.9.0
+
+# ROS 2 Python tests (run inside ROS env or with rclpy installed)
+pytest>=7.0.0
